@@ -1,0 +1,125 @@
+/* Full Press Marketing — brand stylesheet
+   Palette matched to Mental Fitness Lounge:
+   maroon #5C1A1A, dark maroon #3A0F0F, page bg #F2F2F2, card white #FFFFFF,
+   text #1A1A1A, muted #5E5E5E, accent grey #4A4A4A, borders #DDDDDD */
+:root{
+  --maroon:#5C1A1A; --maroon-dark:#3A0F0F; --bg:#F2F2F2; --card:#FFFFFF;
+  --ink:#1A1A1A; --muted:#5E5E5E; --grey:#4A4A4A; --line:#DDDDDD;
+  --radius:14px; --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:var(--maroon)}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* Header / nav */
+header.site{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+.nav .brand img{height:52px;width:auto}
+.nav nav{display:flex;align-items:center;gap:26px}
+.nav nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15.5px}
+.nav nav a:hover{color:var(--maroon)}
+.nav nav a.active{color:var(--maroon)}
+.btn{display:inline-block;background:var(--maroon);color:#fff;font-weight:600;text-decoration:none;
+  padding:12px 26px;border-radius:999px;border:none;cursor:pointer;font-size:16px}
+.btn:hover{background:var(--maroon-dark)}
+.btn.ghost{background:transparent;color:var(--maroon);border:2px solid var(--maroon)}
+.btn.ghost:hover{background:var(--maroon);color:#fff}
+.nav .btn{padding:9px 20px;font-size:15px}
+.nav-toggle{display:none;background:none;border:none;font-size:26px;color:var(--maroon);cursor:pointer}
+@media(max-width:820px){
+  .nav nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--card);
+    flex-direction:column;align-items:flex-start;padding:16px 22px;border-bottom:1px solid var(--line)}
+  .nav nav.open{display:flex}
+  .nav-toggle{display:block}
+}
+
+/* Hero */
+.hero{background:var(--card);border-bottom:1px solid var(--line);padding:74px 0 64px}
+.hero h1{font-size:44px;line-height:1.15;color:var(--maroon-dark);max-width:760px}
+.hero p.sub{font-size:20px;color:var(--muted);max-width:700px;margin:20px 0 30px}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:640px){.hero h1{font-size:33px}.hero{padding:50px 0 44px}}
+
+/* Press-lines motif (from the logo mark) */
+.press-lines{display:flex;flex-direction:column;align-items:center;gap:7px;margin:26px auto 0}
+.press-lines span{display:block;height:5px;border-radius:3px}
+.press-lines span:nth-child(1){width:120px;background:var(--maroon)}
+.press-lines span:nth-child(2){width:86px;background:#C9A8A8}
+.press-lines span:nth-child(3){width:54px;background:var(--grey)}
+
+/* Sections & cards */
+section.block{padding:58px 0}
+section.block h2{font-size:30px;color:var(--maroon-dark);margin-bottom:12px}
+section.block .lede{color:var(--muted);max-width:720px;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card h3{color:var(--maroon);font-size:19px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15.5px}
+.math{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.math .card strong.big{font-size:26px;color:var(--maroon-dark);display:block;margin-bottom:6px}
+
+/* Offer strip */
+.offer{background:var(--maroon-dark);color:#fff;border-radius:var(--radius);padding:38px 34px}
+.offer h2{color:#fff}
+.offer p{color:#E9DADA;max-width:760px}
+.offer .price{font-size:34px;font-weight:700;color:#fff}
+.offer .btn{background:#fff;color:var(--maroon-dark);margin-top:18px}
+.offer .btn:hover{background:var(--bg)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;counter-reset:step}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.step .num{display:inline-block;background:var(--maroon);color:#fff;font-weight:700;border-radius:999px;
+  width:34px;height:34px;line-height:34px;text-align:center;margin-bottom:12px}
+.step h3{color:var(--maroon-dark);font-size:18px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* Forms */
+form.contact{display:grid;gap:14px;max-width:640px}
+form.contact label{font-weight:600;font-size:15px}
+form.contact input,form.contact textarea{width:100%;padding:12px 14px;border:1px solid var(--line);
+  border-radius:10px;font:inherit;background:#fff}
+form.contact textarea{min-height:130px}
+.note{color:var(--muted);font-size:14.5px}
+
+/* Footer */
+footer.site{background:var(--maroon-dark);color:#E9DADA;margin-top:20px}
+footer.site .inner{padding:42px 0 30px;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
+footer.site img{height:58px;width:auto}
+footer.site a{color:#fff;text-decoration:none}
+footer.site nav{display:flex;gap:22px;flex-wrap:wrap;font-weight:600;font-size:15px}
+footer.site .legal{border-top:1px solid rgba(255,255,255,.18);padding:18px 0 26px;font-size:13.5px;color:#C9A8A8}
+
+/* HPC additions */
+.credbar{background:var(--maroon-dark);color:#fff;padding:14px 0}
+.credbar .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:center;text-align:center;font-weight:600;font-size:15px}
+.credbar span{white-space:nowrap}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.hero-photo{border-radius:var(--radius);border:1px solid var(--line);width:100%;height:auto}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:700;color:var(--maroon);margin-bottom:12px}
+ul.checks{list-style:none;display:grid;gap:10px;margin:6px 0 4px}
+ul.checks li{padding-left:28px;position:relative;color:var(--muted);font-size:15.5px}
+ul.checks li:before{content:"\2713";position:absolute;left:0;color:var(--maroon);font-weight:700}
+.tier.featured{border:2px solid var(--maroon)}
+.tier .price{font-size:30px;font-weight:700;color:var(--maroon-dark);display:block;margin-bottom:4px}
+.tier .per{color:var(--muted);font-size:14px;margin-bottom:12px}
+.logostrip{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.logostrip p{text-align:center;color:var(--muted);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.quote{background:var(--card);border-left:5px solid var(--maroon);border-radius:var(--radius);padding:26px 28px}
+.quote p{font-size:19px;color:var(--ink)}
+.brandtext{font-size:22px;font-weight:800;color:#fff;letter-spacing:.02em}
+footer.site .brandtext span{color:#C9A8A8}
+select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+
+/* Button text fix: nav link color must not override button text */
+.nav nav a.btn{color:#fff}
+.nav nav a.btn:hover{color:#fff}
+.offer .btn{color:var(--maroon-dark)}
+.offer .btn:hover{color:var(--maroon-dark)}
+.btn.ghost{color:var(--maroon)}
+.btn.ghost:hover{color:#fff}
